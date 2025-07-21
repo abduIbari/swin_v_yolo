@@ -27,14 +27,14 @@ The **YOLOv5l** model is sourced from the official [Ultralytics YOLOv5 GitHub re
   python val.py --data data.yaml --weights runs/train/exp11/weights/best.pt --task test
     ```
 - Example inference using the trained model:
-    ```python
+```python
 import torch
 
 model = torch.hub.load('ultralytics/yolov5', 'custom', path='yolov5/runs/train/exp12/weights/best.pt')
 result = model('yolo_dataset/images/test/grayscale_wholeImage/aclass_test_imageID_108_GT_3_4_6.png')
 result.print()
 result.show()
-    ```
+```
 
 ## Swin Transformer + RetinaNet Model Setup and Usage
 
@@ -59,7 +59,7 @@ On the other hand, the **Swin Transformer**, used alongside a RetinaNet detectio
 ### Inference, Visualization and Evaluation
 
 - Initialize and run inference with the trained model:
-  ```python
+```python
 from mmdet.apis import init_detector, inference_detector
 import mmcv
 import matplotlib.pyplot as plt
@@ -72,9 +72,9 @@ device = 'cuda:0'
 model = init_detector(config_file, checkpoint_file, device=device)
 img = 'transformer_dataset/test/grayscale_wholeImage/aclass_test_imageID_108_GT_3_4_6.png'
 result = inference_detector(model, img)
-    ```
+```
 
 - Evaluate the trained model using MMDetection’s built-in COCO evaluation tools:
-    ```bash
+```bash
 python mmdetection/tools/test.py configs/swin/retinanet_swin-t-p4-w7_fpn_1x_coco.py work_dirs/final1/epoch_50.pth --cfg-options test_evaluator.metric="bbox" --out work_dirs/result.pkl
-    ```
+```
