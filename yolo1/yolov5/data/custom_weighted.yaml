@@ -1,0 +1,15 @@
+
+    # YOLOv5 Custom Dataset Configuration
+    path: ../yolo_dataset  # dataset root dir
+    train: images/train/grayscale_wholeImage  
+    val: images/test/grayscale_wholeImage  
+
+    # Classes
+    nc: 4  
+    names: ['infant_seat', 'child_seat', 'person', 'object']  
+
+    # Class weights
+    class_weights: {1: 1.5202492211838006, 3: 2.585430463576159, 2: 1.0, 0: 2.0699893955461293}
+    
+
+    

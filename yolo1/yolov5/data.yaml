@@ -1,0 +1,10 @@
+# Dataset root directory relative to the yolov5 directory
+path: ../yolo_dataset
+
+# Train/val/test sets: specify directories, *.txt files, or lists
+train: images/train/grayscale_wholeImage
+val: images/train/grayscale_wholeImage
+test: images/test/grayscale_wholeImage
+
+nc: 4
+names: ['infant_seat', 'child_seat', 'person', 'object']
